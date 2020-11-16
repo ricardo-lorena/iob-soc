@@ -6,8 +6,11 @@
 int main()
 {
   //init uart 
-  uart_init(UART_BASE,FREQ/BAUD);   
-  uart_printf("\n\n\nHello world!\n\n\n");
-  //char *a = malloc(10);
-  //free(a);
+   int i, t1=0, t2=1, nextTerm;
+ uart_init(UART_BASE,FREQ/BAUD);
+  for (i=1;i<=100;++i){
+    uart_printf("%d\n",t1);
+	nextTerm=t1+t2;
+	t1=t2;
+	t2=nextTerm;}
 }
